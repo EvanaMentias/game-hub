@@ -1,7 +1,6 @@
-import genres from "../Data/genres";
 import platforms from "../Data/platforms";
-import apiClient from "../services/api-client";
-import { FetchResponse } from "./useData";
+import apiClient, { FetchResponse } from "../services/api-client";
+
 import { useQuery } from "@tanstack/react-query";
 
 export interface Platform {
@@ -19,5 +18,4 @@ const usePlatforms = () =>
     staleTime: 24 * 60 * 60 * 1000, //24h
     initialData: { count: platforms.length, results: platforms },
   });
-// useData<Platform>("/platforms/lists/parents");
 export default usePlatforms;
